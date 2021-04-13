@@ -47,6 +47,9 @@ namespace MISA.CukCuk.Web.Api.ByMe
             services.AddScoped<IProvinceRepository, ProvinceRepository>();
             services.AddScoped<IProvinceService, ProvinceService>();
 
+            services.AddScoped<IDistrictRepository, DistrictRepository>();
+            services.AddScoped<IDistrictService, DistrictService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

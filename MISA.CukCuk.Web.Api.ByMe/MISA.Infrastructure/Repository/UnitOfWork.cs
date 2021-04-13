@@ -20,10 +20,13 @@ namespace MISA.Infrastructure.Repository
             get;
         }
 
-        public UnitOfWork ( ICountryRepository countryRepository, IProvinceRepository provinceRepository)
+        public IDistrictRepository DistrictRepository { get; }
+
+        public UnitOfWork ( ICountryRepository countryRepository, IProvinceRepository provinceRepository, IDistrictRepository districtRepository)
         {
             Country = countryRepository;
             Province = provinceRepository;
+            DistrictRepository = districtRepository;
         }
        
     }
