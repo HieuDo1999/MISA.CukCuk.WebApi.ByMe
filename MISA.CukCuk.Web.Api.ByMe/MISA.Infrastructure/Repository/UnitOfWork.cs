@@ -9,13 +9,21 @@ namespace MISA.Infrastructure.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public ICustomerRepository Customer
+       
+        public ICountryRepository Country
         {
             get;
         }
-        public UnitOfWork (ICustomerRepository customerRepository)
+
+        public IProvinceRepository Province
         {
-            Customer = customerRepository;
+            get;
+        }
+
+        public UnitOfWork ( ICountryRepository countryRepository, IProvinceRepository provinceRepository)
+        {
+            Country = countryRepository;
+            Province = provinceRepository;
         }
        
     }

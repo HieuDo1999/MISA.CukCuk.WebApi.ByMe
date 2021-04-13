@@ -41,8 +41,11 @@ namespace MISA.CukCuk.Web.Api.ByMe
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IUnitOfWork,UnitOfWork>();
-            services.AddScoped<ICustomerRepository, CustomerRepository>();
-            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<ICountryRepository, CountryRepository>();
+            services.AddScoped<ICountryService, CountryService>();
+
+            services.AddScoped<IProvinceRepository, ProvinceRepository>();
+            services.AddScoped<IProvinceService, ProvinceService>();
 
         }
 

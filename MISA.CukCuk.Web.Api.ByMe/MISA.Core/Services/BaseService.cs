@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace MISA.Core.Services
 {
-    public class BaseService<MISAEntity> : IBaseService<MISAEntity>
+    public class BaseService<T> : IBaseService<T>
     {
         IUnitOfWork _unitOfWork;
-        IBaseRepository<MISAEntity> _baseRepository;
-        public BaseService(IUnitOfWork unitOfWork, IBaseRepository<MISAEntity> baseRepository)
+        IBaseRepository<T> _baseRepository;
+        public BaseService(IUnitOfWork unitOfWork, IBaseRepository<T> baseRepository)
         {
             _unitOfWork = unitOfWork;
             _baseRepository = baseRepository;
@@ -22,22 +22,22 @@ namespace MISA.Core.Services
             throw new NotImplementedException();
         }
 
-        public MISAEntity GetById(Guid entityId)
+        public T GetById(Guid entityId)
         {
-            throw new NotImplementedException();
+            return _baseRepository.GetById(entityId);
         }
 
-        public IEnumerable<MISAEntity> GetEntities()
+        public IEnumerable<T> GetEntities()
         {
             return _baseRepository.GetEntities();
         }
 
-        public int Insert(MISAEntity entity)
+        public int Insert(T entity)
         {
             throw new NotImplementedException();
         }
 
-        public int Update(MISAEntity entity, Guid entityId)
+        public int Update(T entity, Guid entityId)
         {
             throw new NotImplementedException();
         }

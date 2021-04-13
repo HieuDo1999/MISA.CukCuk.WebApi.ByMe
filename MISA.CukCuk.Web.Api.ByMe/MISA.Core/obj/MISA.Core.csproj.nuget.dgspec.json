@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MISA\\MISA.CukCuk.Web.Api.ByMe\\MISA.Core\\MISA.Core.csproj": {}
+    "D:\\MISA\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.Core\\MISA.Core.csproj": {}
   },
   "projects": {
-    "D:\\MISA\\MISA.CukCuk.Web.Api.ByMe\\MISA.Core\\MISA.Core.csproj": {
+    "D:\\MISA\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.Core\\MISA.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MISA\\MISA.CukCuk.Web.Api.ByMe\\MISA.Core\\MISA.Core.csproj",
+        "projectUniqueName": "D:\\MISA\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.Core\\MISA.Core.csproj",
         "projectName": "MISA.Core",
-        "projectPath": "D:\\MISA\\MISA.CukCuk.Web.Api.ByMe\\MISA.Core\\MISA.Core.csproj",
+        "projectPath": "D:\\MISA\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.Core\\MISA.Core.csproj",
         "packagesPath": "C:\\Users\\dthieu\\.nuget\\packages\\",
-        "outputPath": "D:\\MISA\\MISA.CukCuk.Web.Api.ByMe\\MISA.Core\\obj\\",
+        "outputPath": "D:\\MISA\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace MISA.Core.Interfaces
 {
-    public interface ICustomerService: IBaseService<Customer>
+    public interface IProvinceRepository : IBaseRepository<Province>
     {
-        IEnumerable<Customer> GetAllCustomer();
+       
     }
 }

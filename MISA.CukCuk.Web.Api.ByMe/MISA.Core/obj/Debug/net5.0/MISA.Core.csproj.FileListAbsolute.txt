@@ -10,3 +10,15 @@ D:\MISA\MISA.CukCuk.Web.Api.ByMe\MISA.Core\bin\Debug\net5.0\MISA.Core.pdb
 D:\MISA\MISA.CukCuk.Web.Api.ByMe\MISA.Core\obj\Debug\net5.0\MISA.Core.dll
 D:\MISA\MISA.CukCuk.Web.Api.ByMe\MISA.Core\obj\Debug\net5.0\ref\MISA.Core.dll
 D:\MISA\MISA.CukCuk.Web.Api.ByMe\MISA.Core\obj\Debug\net5.0\MISA.Core.pdb
+D:\MISA\MISA.CukCuk.WebApi.ByMe\MISA.CukCuk.Web.Api.ByMe\MISA.Core\bin\Debug\net5.0\MISA.Core.deps.json
+D:\MISA\MISA.CukCuk.WebApi.ByMe\MISA.CukCuk.Web.Api.ByMe\MISA.Core\bin\Debug\net5.0\MISA.Core.dll
+D:\MISA\MISA.CukCuk.WebApi.ByMe\MISA.CukCuk.Web.Api.ByMe\MISA.Core\bin\Debug\net5.0\ref\MISA.Core.dll
+D:\MISA\MISA.CukCuk.WebApi.ByMe\MISA.CukCuk.Web.Api.ByMe\MISA.Core\bin\Debug\net5.0\MISA.Core.pdb
+D:\MISA\MISA.CukCuk.WebApi.ByMe\MISA.CukCuk.Web.Api.ByMe\MISA.Core\obj\Debug\net5.0\MISA.Core.csprojAssemblyReference.cache
+D:\MISA\MISA.CukCuk.WebApi.ByMe\MISA.CukCuk.Web.Api.ByMe\MISA.Core\obj\Debug\net5.0\MISA.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\MISA\MISA.CukCuk.WebApi.ByMe\MISA.CukCuk.Web.Api.ByMe\MISA.Core\obj\Debug\net5.0\MISA.Core.AssemblyInfoInputs.cache
+D:\MISA\MISA.CukCuk.WebApi.ByMe\MISA.CukCuk.Web.Api.ByMe\MISA.Core\obj\Debug\net5.0\MISA.Core.AssemblyInfo.cs
+D:\MISA\MISA.CukCuk.WebApi.ByMe\MISA.CukCuk.Web.Api.ByMe\MISA.Core\obj\Debug\net5.0\MISA.Core.csproj.CoreCompileInputs.cache
+D:\MISA\MISA.CukCuk.WebApi.ByMe\MISA.CukCuk.Web.Api.ByMe\MISA.Core\obj\Debug\net5.0\MISA.Core.dll
+D:\MISA\MISA.CukCuk.WebApi.ByMe\MISA.CukCuk.Web.Api.ByMe\MISA.Core\obj\Debug\net5.0\ref\MISA.Core.dll
+D:\MISA\MISA.CukCuk.WebApi.ByMe\MISA.CukCuk.Web.Api.ByMe\MISA.Core\obj\Debug\net5.0\MISA.Core.pdb

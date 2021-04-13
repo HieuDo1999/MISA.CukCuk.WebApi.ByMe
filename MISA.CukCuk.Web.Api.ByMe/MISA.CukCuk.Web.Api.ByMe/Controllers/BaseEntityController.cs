@@ -13,28 +13,22 @@ namespace MISA_Cukcuk_WebAPI.Controllers
 {
     [Route("api/v1/[controller]s")]
     [ApiController]
-    public class BaseEntityController<MISAEntity> : ControllerBase
+    public class BaseEntityController<T> : ControllerBase
     {
         protected string _tableName = string.Empty;
 
-        protected string _connectionString = "" +
-             "Host=47.241.69.179; " +
-             "Port=3306;" +
-             "User Id= dev; " +
-             "Password=12345678;" +
-             "Database= MF0_NVManh_CukCuk02";
-        protected IDbConnection _dbConnection;
-        IBaseService<MISAEntity> _baseService;
-        public BaseEntityController(IBaseService<MISAEntity> baseService)
+
+        IBaseService<T> _baseService;
+          
+        public BaseEntityController(IBaseService<T> baseService)
         {
             _baseService = baseService;
-            _tableName = typeof(MISAEntity).Name;
-            _dbConnection = new MySqlConnection(_connectionString);
+            _tableName = typeof(T).Name;
+            
         }
         [HttpGet]
         public IActionResult Get()
         {
-
             var entities = _baseService.GetEntities();
           
             if (entities.Count() == 0)
@@ -47,14 +41,10 @@ namespace MISA_Cukcuk_WebAPI.Controllers
             }
         }
         [HttpGet("{entityId}")]
-        public IActionResult Get(string entityId)
+        public IActionResult Get(Guid entityId)
         {
-            var storeName = $"Proc_Get{_tableName}ById";
-            DynamicParameters dynamicParameters = new DynamicParameters();
-            dynamicParameters.Add($"@{_tableName}Id", entityId);
-
-
-            var entity = _dbConnection.Query<MISAEntity>(storeName, param: dynamicParameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            var entity = _baseService.GetById(entityId);
+           
             if (entity == null)
             {
                 return NoContent();
@@ -65,13 +55,9 @@ namespace MISA_Cukcuk_WebAPI.Controllers
             }
         }
         [HttpPost]
-        public IActionResult Post(MISAEntity entity)
+        public IActionResult Post(T entity)
         {
-            //validate
-            ValidateData(entity);
-            var storeName = $"Proc_Insert{_tableName}";
-            var storeParam = entity;
-            var rowAffects = _dbConnection.Execute(storeName, param: storeParam, commandType: CommandType.StoredProcedure);
+            var rowAffects=0;
             if (rowAffects == 0)
             {
                 return NoContent();
@@ -82,7 +68,7 @@ namespace MISA_Cukcuk_WebAPI.Controllers
             }
 
         }
-        protected virtual void ValidateData(MISAEntity entity)
+        protected virtual void ValidateData(T entity)
         {
         }
     }

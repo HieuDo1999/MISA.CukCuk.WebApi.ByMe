@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MISA.Core.Entities
 {
-    class BaseEntity
+   public  class BaseEntity
     {
         public DateTime? CreatedDate { get; set; }
         public string CreatedBy { get; set; }

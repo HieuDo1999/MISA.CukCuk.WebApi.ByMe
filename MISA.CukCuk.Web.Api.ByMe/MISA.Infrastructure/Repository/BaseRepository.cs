@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MISA.Infrastructure.Repository
 {
-   public  class BaseRepository<MISAEntity> : IBaseRepository<MISAEntity>
+   public  class BaseRepository<T> : IBaseRepository<T>
     {
         protected string _tableName = string.Empty;
 
@@ -19,51 +19,48 @@ namespace MISA.Infrastructure.Repository
              "Port=3306;" +
              "User Id= dev; " +
              "Password=12345678;" +
-             "Database= MF0_NVManh_CukCuk02";
+             "Database= TEST.MISA.eShop";
         protected IDbConnection _dbConnection;
 
         public BaseRepository()
         {
 
-            _tableName = typeof(MISAEntity).Name;
+            _tableName = typeof(T).Name;
             _dbConnection = new MySqlConnection(_connectionString);
         }
-
-        public int Delete(Guid entityId)
-        {
-            throw new NotImplementedException();
-        }
-
-     
-
-        public MISAEntity Get(string entityId)
+        public T Get(string entityId)
         {
             var storeName = $"Proc_Get{_tableName}ById";
             DynamicParameters dynamicParameters = new DynamicParameters();
             dynamicParameters.Add($"@{_tableName}Id", entityId);
 
 
-            var entity = _dbConnection.Query<MISAEntity>(storeName, param: dynamicParameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            var entity = _dbConnection.Query<T>(storeName, param: dynamicParameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
             return entity;
         }
 
-        public MISAEntity GetById(Guid entityId)
+        public T GetById(Guid entityId)
         {
-            throw new NotImplementedException();
+            var storeName = $"Proc_Get{_tableName}ById";
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add($"@{_tableName}Id", entityId);
+
+            var entity = _dbConnection.Query<T>(storeName, param: dynamicParameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            return entity;
         }
 
-        public IEnumerable<MISAEntity> GetEntities()
+        public IEnumerable<T> GetEntities()
         {
-            var entities = _dbConnection.Query<MISAEntity>($"Proc_Get{_tableName}s", commandType: CommandType.StoredProcedure);
+            var entities = _dbConnection.Query<T>($"Proc_Get{_tableName}s", commandType: CommandType.StoredProcedure);
             return entities;
         }
 
-        public int Insert(MISAEntity entity)
+        public int Insert(T entity)
         {
             throw new NotImplementedException();
         }
 
-        public int Post(MISAEntity entity)
+        public int Post(T entity)
         {
             //validate
             ValidateData(entity);
@@ -74,12 +71,16 @@ namespace MISA.Infrastructure.Repository
 
         }
 
-        public int Update(MISAEntity entity, Guid entityId)
+        public int Update(T entity, Guid entityId)
+        {
+            throw new NotImplementedException();
+        }
+        public int Delete(Guid entityId)
         {
             throw new NotImplementedException();
         }
 
-        protected virtual void ValidateData(MISAEntity entity)
+        protected virtual void ValidateData(T entity)
         {
         }
     }
