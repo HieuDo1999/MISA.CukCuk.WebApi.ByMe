@@ -14,5 +14,6 @@ namespace MISA.Core.Interfaces
         IProvinceRepository Province { get; }
 
         IDistrictRepository DistrictRepository { get; }
+        IWardRepository WardRepository { get; }
     }
 }

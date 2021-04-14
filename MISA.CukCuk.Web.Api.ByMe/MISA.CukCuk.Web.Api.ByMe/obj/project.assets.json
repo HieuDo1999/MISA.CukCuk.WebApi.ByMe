@@ -299,25 +299,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HieuDo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\dthieu\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Misa\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.CukCuk.Web.Api.ByMe.csproj",
+      "projectUniqueName": "D:\\MISA\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.CukCuk.Web.Api.ByMe.csproj",
       "projectName": "MISA.CukCuk.Web.Api.ByMe",
-      "projectPath": "D:\\Misa\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.CukCuk.Web.Api.ByMe.csproj",
-      "packagesPath": "C:\\Users\\HieuDo\\.nuget\\packages\\",
-      "outputPath": "D:\\Misa\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.CukCuk.Web.Api.ByMe\\obj\\",
+      "projectPath": "D:\\MISA\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.CukCuk.Web.Api.ByMe.csproj",
+      "packagesPath": "C:\\Users\\dthieu\\.nuget\\packages\\",
+      "outputPath": "D:\\MISA\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.CukCuk.Web.Api.ByMe\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\HieuDo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dthieu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -330,11 +333,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Misa\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.Core\\MISA.Core.csproj": {
-              "projectPath": "D:\\Misa\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.Core\\MISA.Core.csproj"
+            "D:\\MISA\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.Core\\MISA.Core.csproj": {
+              "projectPath": "D:\\MISA\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.Core\\MISA.Core.csproj"
             },
-            "D:\\Misa\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.Infrastructure\\MISA.Infrastructure.csproj": {
-              "projectPath": "D:\\Misa\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.Infrastructure\\MISA.Infrastructure.csproj"
+            "D:\\MISA\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.Infrastructure\\MISA.Infrastructure.csproj": {
+              "projectPath": "D:\\MISA\\MISA.CukCuk.WebApi.ByMe\\MISA.CukCuk.Web.Api.ByMe\\MISA.Infrastructure\\MISA.Infrastructure.csproj"
             }
           }
         }

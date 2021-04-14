@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace MISA.CukCuk.Web.Api.ByMe.Controllers
 {
-    public class DistrictController:BaseEntityController<District>
+    public class StoreController:BaseEntityController<Store>
     {
         IUnitOfWork _unitOfWork;
-        public DistrictController(IUnitOfWork unitOfWork, IBaseService<District> baseService) : base(baseService)
+        public StoreController(IUnitOfWork unitOfWork, IBaseService<Store> baseService) : base(baseService)
         {
             _unitOfWork = unitOfWork;
         }

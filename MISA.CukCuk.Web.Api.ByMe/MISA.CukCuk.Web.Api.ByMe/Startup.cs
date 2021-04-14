@@ -32,7 +32,7 @@ namespace MISA.CukCuk.Web.Api.ByMe
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -49,6 +49,12 @@ namespace MISA.CukCuk.Web.Api.ByMe
 
             services.AddScoped<IDistrictRepository, DistrictRepository>();
             services.AddScoped<IDistrictService, DistrictService>();
+
+               services.AddScoped<IWardRepository, WardRepository>();
+            services.AddScoped<IWardService, WardService>();
+
+            services.AddScoped<IStoreRepository, StoreRepository>();
+            services.AddScoped<IStoreService, StoreService>();
 
         }
 
@@ -93,7 +99,7 @@ namespace MISA.CukCuk.Web.Api.ByMe
 
                 await context.Response.WriteAsJsonAsync(response);
             }));
-
+            app.UseCors(option => option.AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader());
             app.UseHttpsRedirection();
 
             app.UseRouting();
