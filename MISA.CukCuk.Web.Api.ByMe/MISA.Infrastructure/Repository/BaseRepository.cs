@@ -57,27 +57,40 @@ namespace MISA.Infrastructure.Repository
 
         public int Insert(T entity)
         {
-            throw new NotImplementedException();
-        }
-
-        public int Post(T entity)
-        {
             //validate
             ValidateData(entity);
             var storeName = $"Proc_Insert{_tableName}";
             var storeParam = entity;
             var rowAffects = _dbConnection.Execute(storeName, param: storeParam, commandType: CommandType.StoredProcedure);
             return rowAffects;
+        }
 
+        public int Post(T entity)
+        {
+          //validate
+            ValidateData(entity);
+            var storeName = $"Proc_Insert{_tableName}";
+            var storeParam = entity;
+            var rowAffects = _dbConnection.Execute(storeName, param: storeParam, commandType: CommandType.StoredProcedure);
+            return rowAffects;
         }
 
         public int Update(T entity, Guid entityId)
         {
-            throw new NotImplementedException();
+            ValidateData(entity);
+            var storeName = $"Proc_Update{_tableName}";
+            var storeParam = entity;
+            var rowAffects = _dbConnection.Execute(storeName, param: storeParam, commandType: CommandType.StoredProcedure);
+            return rowAffects;
+
         }
         public int Delete(Guid entityId)
         {
-            throw new NotImplementedException();
+            var storeName = $"Proc_Delete{_tableName}";
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add($"@{_tableName}Id", entityId);
+            var rowAffects = _dbConnection.Execute(storeName, param: dynamicParameters, commandType: CommandType.StoredProcedure);
+            return rowAffects;
         }
 
         protected virtual void ValidateData(T entity)

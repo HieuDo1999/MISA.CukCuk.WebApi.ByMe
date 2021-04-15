@@ -19,7 +19,7 @@ namespace MISA.Core.Services
 
         public int Delete(Guid entityId)
         {
-            throw new NotImplementedException();
+            return _baseRepository.Delete(entityId);
         }
 
         public T GetById(Guid entityId)
@@ -34,12 +34,12 @@ namespace MISA.Core.Services
 
         public int Insert(T entity)
         {
-            throw new NotImplementedException();
+            return _baseRepository.Insert(entity);
         }
 
         public int Update(T entity, Guid entityId)
         {
-            throw new NotImplementedException();
+            return _baseRepository.Update(entity, entityId);
         }
     }
 }

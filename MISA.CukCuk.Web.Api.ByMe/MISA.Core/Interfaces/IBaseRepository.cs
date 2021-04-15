@@ -47,5 +47,7 @@ namespace MISA.Core.Interfaces
         /// <returns>Số bản ghi đã xóa được trong Db</returns>
         /// CreatedBy: DTHieu(13/4/2021)
         int Delete(Guid entityId);
+
+       
     }
 }

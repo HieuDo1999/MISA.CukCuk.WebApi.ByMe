@@ -57,7 +57,7 @@ namespace MISA_Cukcuk_WebAPI.Controllers
         [HttpPost]
         public IActionResult Post(T entity)
         {
-            var rowAffects=0;
+            var rowAffects = _baseService.Insert(entity);
             if (rowAffects == 0)
             {
                 return NoContent();
@@ -65,6 +65,36 @@ namespace MISA_Cukcuk_WebAPI.Controllers
             else
             {
                 return Ok(entity);
+            }
+        }
+
+          [HttpPut("{entityId}")]
+            public IActionResult Put(T entity,Guid entityId)
+            {
+                var rowAffects = _baseService.Update(entity, entityId);
+                if (rowAffects == 0)
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return Ok(entity);
+                }
+
+            }
+
+
+            [HttpDelete("{entityId}")]
+        public int Delete(Guid entityId)
+        {
+            var rowAffects = _baseService.Delete(entityId);
+            if (rowAffects == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
             }
 
         }
