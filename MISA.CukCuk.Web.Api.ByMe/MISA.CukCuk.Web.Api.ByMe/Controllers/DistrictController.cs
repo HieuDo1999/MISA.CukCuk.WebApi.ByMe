@@ -1,4 +1,5 @@
-﻿using MISA.Core.Entities;
+﻿using Microsoft.AspNetCore.Mvc;
+using MISA.Core.Entities;
 using MISA.Core.Interfaces;
 using MISA_Cukcuk_WebAPI.Controllers;
 using System;
@@ -14,6 +15,20 @@ namespace MISA.CukCuk.Web.Api.ByMe.Controllers
         public DistrictController(IUnitOfWork unitOfWork, IBaseService<District> baseService) : base(baseService)
         {
             _unitOfWork = unitOfWork;
+        }
+        [HttpGet("GetDistrictWithProvince/{provinceId}")]
+        public IActionResult GetDistrictWithProvince(Guid provinceId)
+        {
+            var entities = _unitOfWork.District.GetDistrictWithProvince(provinceId);
+
+            if (entities.Count() == 0)
+            {
+                return NoContent();
+            }
+            else
+            {
+                return Ok(entities);
+            }
         }
     }
 }

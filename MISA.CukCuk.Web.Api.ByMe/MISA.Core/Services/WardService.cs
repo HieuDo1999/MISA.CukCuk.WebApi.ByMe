@@ -15,5 +15,10 @@ namespace MISA.Core.Services
         {
             _unitOfWork = unitOfWork;
         }
+
+        public IEnumerable<Ward> GetWardWithDistrict(Guid wardId)
+        {
+          return  _unitOfWork.Ward.GetWardWithDistrict(wardId);
+        }
     }
 }

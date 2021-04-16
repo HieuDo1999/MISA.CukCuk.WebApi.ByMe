@@ -13,7 +13,8 @@ namespace MISA.Core.Interfaces
         ICountryRepository Country { get; }
         IProvinceRepository Province { get; }
 
-        IDistrictRepository DistrictRepository { get; }
-        IWardRepository WardRepository { get; }
+        IDistrictRepository District { get; }
+        IWardRepository Ward { get; }
+        IStoreRepository Store { get; }
     }
 }

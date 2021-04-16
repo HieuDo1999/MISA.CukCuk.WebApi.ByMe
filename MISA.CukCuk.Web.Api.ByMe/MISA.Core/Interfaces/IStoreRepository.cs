@@ -9,5 +9,6 @@ namespace MISA.Core.Interfaces
 {
     public interface IStoreRepository:IBaseRepository<Store>
     {
+        public IEnumerable<Store> GetStoreFilter(Guid storeCode, string storeName, string address, string phoneNumber, int status);
     }
 }

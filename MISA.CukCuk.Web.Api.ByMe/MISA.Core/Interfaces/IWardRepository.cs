@@ -9,5 +9,6 @@ namespace MISA.Core.Interfaces
 {
     public interface IWardRepository:IBaseRepository<Ward>
     {
+        public IEnumerable<Ward> GetWardWithDistrict(Guid wardId);
     }
 }

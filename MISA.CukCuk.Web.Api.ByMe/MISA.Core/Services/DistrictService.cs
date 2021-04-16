@@ -15,5 +15,9 @@ namespace MISA.Core.Services
         {
             _unitOfWork = unitOfWork;
         }
+        public IEnumerable<District> GetDistrictWithProvince(Guid provinceId)
+        {
+            return _unitOfWork.District.GetDistrictWithProvince(provinceId);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using MISA.Core.Entities;
+﻿using Microsoft.AspNetCore.Mvc;
+using MISA.Core.Entities;
 using MISA.Core.Interfaces;
 using MISA_Cukcuk_WebAPI.Controllers;
 using System;
@@ -15,5 +16,21 @@ namespace MISA.CukCuk.Web.Api.ByMe.Controllers
         {
             _unitOfWork = unitOfWork;
         }
+        [HttpGet("GetStoreFilter")]
+        public IActionResult GetStoreFilter(Guid storeCode, string storeName, string address, string phoneNumber, int status)
+        {
+            var entities = _unitOfWork.Store.GetStoreFilter(storeCode, storeName, address, phoneNumber, status);
+
+            if (entities.Count() == 0)
+            {
+                return NoContent();
+            }
+            else
+            {
+                return Ok(entities);
+            }
+        }
     }
+   
 }
+
