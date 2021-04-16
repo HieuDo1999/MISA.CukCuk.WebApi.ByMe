@@ -10,5 +10,6 @@ namespace MISA.Infrastructure.Repository
 {
     public class DistrictRepository:BaseRepository<District>,IDistrictRepository
     {
+      
     }
 }

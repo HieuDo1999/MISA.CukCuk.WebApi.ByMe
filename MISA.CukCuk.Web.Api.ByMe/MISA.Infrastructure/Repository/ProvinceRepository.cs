@@ -11,18 +11,19 @@ using System.Threading.Tasks;
 
 namespace MISA.Infrastructure.Repository
 {
-   public  class ProvinceRepository:BaseRepository<Province>,IProvinceRepository
+    public class ProvinceRepository : BaseRepository<Province>, IProvinceRepository
     {
-        public IActionResult GetByCountryId(Guid countryId)
+        public IEnumerable<Province> GetProvinceWithCountry(Guid countryId)
         {
-            var storeName = $"Proc_GetProvinceByCountryId";
+            var storeName = $"Proc_GetProvinceWithCountry";
             var storeParam = new
             {
-                CountryId = countryId
+                Id = countryId
             };
 
             var entities = _dbConnection.Query<Province>(storeName, param: storeParam, commandType: CommandType.StoredProcedure);
-            return Ok(entities);
+            return (entities);
         }
     }
+    
 }

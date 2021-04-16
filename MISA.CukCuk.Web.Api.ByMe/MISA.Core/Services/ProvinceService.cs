@@ -15,5 +15,10 @@ namespace MISA.Core.Services
         {
             _unitOfWork = unitOfWork;
         }
+
+        public IEnumerable<Province> GetProvinceWithCountry(Guid countryId)
+        {
+            return _unitOfWork.Province.GetProvinceWithCountry(countryId);
+        }
     }
 }
