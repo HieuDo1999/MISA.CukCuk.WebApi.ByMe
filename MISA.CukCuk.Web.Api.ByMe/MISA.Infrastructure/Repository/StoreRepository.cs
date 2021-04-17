@@ -21,7 +21,7 @@ namespace MISA.Infrastructure.Repository
             dynamicParameters.Add("Address", address);
             dynamicParameters.Add("PhoneNumber", phoneNumber);
             dynamicParameters.Add("Status", status);
-
+                
             var entities = _dbConnection.Query<Store>(storeNames, param: dynamicParameters, commandType: CommandType.StoredProcedure);
             return (entities);
         }

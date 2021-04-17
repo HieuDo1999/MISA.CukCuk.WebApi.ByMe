@@ -17,7 +17,7 @@ namespace MISA.CukCuk.Web.Api.ByMe.Controllers
             _unitOfWork = unitOfWork;
         }
         [HttpGet("GetStoreFilter")]
-        public IActionResult GetStoreFilter(string storeCode, string storeName, string address, string phoneNumber, int status)
+        public IActionResult GetStoreFilter(string storeCode, string storeName, string address, string phoneNumber, int? status)
         {
             var entities = _unitOfWork.Store.GetStoreFilter(storeCode, storeName, address, phoneNumber, status);
 
