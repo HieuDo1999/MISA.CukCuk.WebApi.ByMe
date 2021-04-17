@@ -25,5 +25,17 @@ namespace MISA.Core.Services
         {
             return _unitOfWork.Store.GetStoreFilter(storeCode,storeName, address, phoneNumber, status);
         }
+
+        public IEnumerable<Store> GetStoreByIndexOffset(int positionStart, int offset)
+        {
+            return _unitOfWork.Store.GetStoreByIndexOffset(positionStart, offset);
+        }
+        public int GetCountStores()
+        {
+            return _unitOfWork.Store.GetCountStores();
+        }
+
+
+
     }
 }

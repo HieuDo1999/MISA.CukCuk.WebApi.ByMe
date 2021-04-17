@@ -44,6 +44,27 @@ namespace MISA.CukCuk.Web.Api.ByMe.Controllers
                 return Ok(entities);
             }
         }
+
+        [HttpGet("GetStoreByIndexOffset")]
+        public IActionResult GetStoreByIndexOffset(int positionStart, int offSet)
+        {
+            var entities = _unitOfWork.Store.GetStoreByIndexOffset(positionStart,offSet);
+            if (entities.Count() == 0)
+            {
+                return NoContent();
+            }
+            else
+            {
+                return Ok(entities);
+            }
+        }
+
+        [HttpGet("GetCountStores")]
+        public IActionResult GetCountStores()
+        {
+            var count = _unitOfWork.Store.GetCountStores();
+            return Ok(count);
+        }
     }
    
 }

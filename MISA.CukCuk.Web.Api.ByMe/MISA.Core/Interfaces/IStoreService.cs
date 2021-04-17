@@ -11,5 +11,8 @@ namespace MISA.Core.Interfaces
     {
         public IEnumerable<Store> GetStoreFilter(string storeCode, string storeName, string address, string phoneNumber, int? status);
         public IEnumerable<Store> GetStoreByStoreCode(string storeCode);
+
+        public IEnumerable<Store> GetStoreByIndexOffset(int positionStart, int positionOffset);
+        public int GetCountStores();
     }
 }
