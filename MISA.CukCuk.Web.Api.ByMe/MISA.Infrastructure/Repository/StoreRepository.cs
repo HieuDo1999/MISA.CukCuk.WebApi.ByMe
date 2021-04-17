@@ -12,18 +12,25 @@ namespace MISA.Infrastructure.Repository
 {
     public class StoreRepository : BaseRepository<Store>, IStoreRepository
     {
-        public IEnumerable<Store> GetStoreFilter(Guid storeCode, string storeName, string address, string phoneNumber, int status)
+        public IEnumerable<Store> GetStoreFilter(string storeCode, string storeName, string address, string phoneNumber, int? status)
         {
-            var storeNames = $"Proc_GetStoreFilter";
-            var storeParam = new
-            {   StoreCode=storeCode,
-                StoreName=storeName,
-                Address=address,
-                PhoneNumber=phoneNumber,
-                Status=status
-            };
+            string storeNames = "Proc_GetStoreFilter";
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("StoreCode", storeCode);
+            dynamicParameters.Add("StoreName", storeName);
+            dynamicParameters.Add("Address", address);
+            dynamicParameters.Add("PhoneNumber", phoneNumber);
+            dynamicParameters.Add("Status", status);
 
-            var entities = _dbConnection.Query<Store>(storeNames, param: storeParam, commandType: CommandType.StoredProcedure);
+            var entities = _dbConnection.Query<Store>(storeNames, param: dynamicParameters, commandType: CommandType.StoredProcedure);
+            return (entities);
+        }
+        public IEnumerable<Store> GetStoreByStoreCode(string storeCode)
+        {
+            string storeNames = "Proc_GetStoreByStoreCode";
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("StoreCode", storeCode);
+            var entities = _dbConnection.Query<Store>(storeNames, param: dynamicParameters, commandType: CommandType.StoredProcedure);
             return (entities);
         }
     }

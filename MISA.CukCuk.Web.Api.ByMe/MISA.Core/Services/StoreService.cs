@@ -16,7 +16,12 @@ namespace MISA.Core.Services
             _unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<Store> GetStoreFilter(Guid storeCode, string storeName, string address, string phoneNumber, int status)
+        public IEnumerable<Store> GetStoreByStoreCode(string storeCode)
+        {
+           return  _unitOfWork.Store.GetStoreByStoreCode(storeCode);
+        }
+
+        public IEnumerable<Store> GetStoreFilter(string storeCode, string storeName, string address, string phoneNumber, int? status)
         {
             return _unitOfWork.Store.GetStoreFilter(storeCode,storeName, address, phoneNumber, status);
         }
