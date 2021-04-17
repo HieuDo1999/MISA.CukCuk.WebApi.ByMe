@@ -62,8 +62,8 @@ namespace MISA.CukCuk.Web.Api.ByMe.Controllers
         [HttpGet("GetCountStores")]
         public IActionResult GetCountStores()
         {
-            var count = _unitOfWork.Store.GetCountStores();
-            return Ok(count);
+            var entities = _unitOfWork.Store.GetCountStores();
+            return Ok(entities);
         }
     }
    

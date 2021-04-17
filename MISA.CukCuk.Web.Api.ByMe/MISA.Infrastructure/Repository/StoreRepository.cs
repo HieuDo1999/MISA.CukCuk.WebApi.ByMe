@@ -15,19 +15,23 @@ namespace MISA.Infrastructure.Repository
         public IEnumerable<Store> GetStoreFilter(string storeCode, string storeName, string address, string phoneNumber, int? status)
         {
             string storeNames = "Proc_GetStoreFilter";
+            if (status == null)
+            {
+                status = 2;
+            }
             DynamicParameters dynamicParameters = new DynamicParameters();
             dynamicParameters.Add("StoreCode", storeCode);
             dynamicParameters.Add("StoreName", storeName);
             dynamicParameters.Add("Address", address);
             dynamicParameters.Add("PhoneNumber", phoneNumber);
             dynamicParameters.Add("Status", status);
-                
+           
             var entities = _dbConnection.Query<Store>(storeNames, param: dynamicParameters, commandType: CommandType.StoredProcedure);
             return (entities);
         }
         public IEnumerable<Store> GetStoreByStoreCode(string storeCode)
         {
-            string storeNames = "Proc_GetStoreByStoreCode";
+            string storeNames = "Proc_GetStoreByStoreCode"; 
             DynamicParameters dynamicParameters = new DynamicParameters();
             dynamicParameters.Add("StoreCode", storeCode);
             var entities = _dbConnection.Query<Store>(storeNames, param: dynamicParameters, commandType: CommandType.StoredProcedure);
@@ -46,8 +50,8 @@ namespace MISA.Infrastructure.Repository
         public int GetCountStores()
         {
             string storeNames = "Proc_GetCountStores";
-            var count = _dbConnection.Query(storeNames, commandType: CommandType.StoredProcedure);
-            return count.Count();
+            var count = _dbConnection.ExecuteScalar<int>(storeNames, commandType: CommandType.StoredProcedure);
+            return count;
         }
     }
 }
