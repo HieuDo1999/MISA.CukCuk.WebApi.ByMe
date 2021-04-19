@@ -9,6 +9,11 @@ namespace MISA.Core.Interfaces
 {
     public interface IProvinceRepository : IBaseRepository<Province>
     {
-       public IEnumerable<Province> GetProvinceWithCountry(Guid countryId);
+        /// <summary>
+        /// Lấy dữ liệu danh sách  của province theo countryId 
+        /// </summary>
+        /// <param name="countryId"></param>
+        /// <returns>danh sách province  </returns>
+        public IEnumerable<Province> GetProvinceWithCountry(Guid countryId);
     }
 }

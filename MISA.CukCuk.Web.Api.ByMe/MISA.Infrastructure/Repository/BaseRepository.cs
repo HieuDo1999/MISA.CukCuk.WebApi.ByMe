@@ -19,7 +19,7 @@ namespace MISA.Infrastructure.Repository
              "Port=3306;" +
              "User Id= dev; " +
              "Password=12345678;" +
-             "Database= TEST.MISA.eShop";
+             "Database= MF769_DTHIEU_Eshop_copy";
         protected IDbConnection _dbConnection;
 
         public BaseRepository()

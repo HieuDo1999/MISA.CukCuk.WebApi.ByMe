@@ -57,9 +57,24 @@ namespace MISA.CukCuk.Web.Api.ByMe.Controllers
             {
                 return Ok(entities);
             }
-        }
+            }
 
-        [HttpGet("GetCountStores")]
+            [HttpGet("GetStoreFilterByIndexOffset")]
+            public IActionResult GetStoreFilterByIndexOffset(int positionStart, int offSet, string storeCode, string storeName, string address, string phoneNumber, int? status)
+            {
+                var entities = _unitOfWork.Store.GetStoreFilterByIndexOffset(positionStart, offSet, storeCode, storeName, address, phoneNumber, status);
+                if (entities.Count() == 0)
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return Ok(entities);
+                }
+            }
+
+
+            [HttpGet("GetCountStores")]
         public IActionResult GetCountStores()
         {
             var entities = _unitOfWork.Store.GetCountStores();

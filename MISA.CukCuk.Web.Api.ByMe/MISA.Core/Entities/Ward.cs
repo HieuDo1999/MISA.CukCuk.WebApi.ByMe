@@ -19,6 +19,6 @@ namespace MISA.Core.Entities
         /// <summary>
         /// Mã huyện
         /// </summary>
-        public Guid DistrictId { get; set; }
+        public Guid? DistrictId { get; set; }
     }
 }

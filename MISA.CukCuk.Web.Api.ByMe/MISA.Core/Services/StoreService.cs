@@ -30,6 +30,10 @@ namespace MISA.Core.Services
         {
             return _unitOfWork.Store.GetStoreByIndexOffset(positionStart, offset);
         }
+        public IEnumerable<Store> GetStoreFilterByIndexOffset(int positionStart, int offset, string storeCode, string storeName, string address, string phoneNumber, int? status)
+        {
+            return _unitOfWork.Store.GetStoreFilterByIndexOffset(positionStart, offset,  storeCode,  storeName,  address,  phoneNumber, status);
+        }
         public int GetCountStores()
         {
             return _unitOfWork.Store.GetCountStores();

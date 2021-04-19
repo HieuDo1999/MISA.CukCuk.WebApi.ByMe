@@ -9,6 +9,12 @@ namespace MISA.Core.Interfaces
 {
     public interface IWardRepository:IBaseRepository<Ward>
     {
-        public IEnumerable<Ward> GetWardWithDistrict(Guid wardId);
+        /// <summary>
+        /// Lấy danh sách ward theo districtId
+        /// </summary>
+        /// <param name="districtId"></param>
+        /// <returns>danh sách ward</returns>
+        /// created by DTHieu(15/04/2021 )
+        public IEnumerable<Ward> GetWardWithDistrict(Guid districtId);
     }
 }

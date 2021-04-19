@@ -9,6 +9,11 @@ namespace MISA.Core.Interfaces
 {
     public interface IDistrictService:IBaseService<District>
     {
+        /// <summary>
+        /// Lấy dữ liệu danh sách của district theo provinceId
+        /// </summary>
+        /// <param name="provinceId"></param>
+        /// <returns>danh sách district </returns>
         public IEnumerable<District> GetDistrictWithProvince(Guid provinceId);
     }
 }

@@ -47,6 +47,25 @@ namespace MISA.Infrastructure.Repository
             var entities = _dbConnection.Query<Store>(storeNames, param: dynamicParameters, commandType: CommandType.StoredProcedure);
             return (entities);
         }
+
+        public IEnumerable<Store> GetStoreFilterByIndexOffset(int positionStart, int offSet, string storeCode, string storeName, string address, string phoneNumber, int? status)
+        {
+            if (status == null)
+            {
+                status = 2;
+            }
+            string storeNames = "Proc_GetStoreFilterByIndexOffset";
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("positionStart", positionStart);
+            dynamicParameters.Add("offSet", offSet);
+            dynamicParameters.Add("StoreCode", storeCode);
+            dynamicParameters.Add("StoreName", storeName);
+            dynamicParameters.Add("Address", address);
+            dynamicParameters.Add("PhoneNumber", phoneNumber);
+            dynamicParameters.Add("Status", status);
+            var entities = _dbConnection.Query<Store>(storeNames, param: dynamicParameters, commandType: CommandType.StoredProcedure);
+            return (entities);
+        }
         public int GetCountStores()
         {
             string storeNames = "Proc_GetCountStores";

@@ -19,6 +19,6 @@ namespace MISA.Core.Entities
         /// <summary>
         /// Mã tỉnh
         /// </summary>
-        public Guid ProvinceId { get; set; }
+        public Guid? ProvinceId { get; set; }
     }
 }

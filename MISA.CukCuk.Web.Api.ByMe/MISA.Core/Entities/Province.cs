@@ -20,7 +20,7 @@ namespace MISA.Core.Entities
         /// <summary>
         /// Mã nước
         /// </summary>
-        public Guid CountryId { get; set; }
+        public Guid? CountryId { get; set; }
        
     }
 }

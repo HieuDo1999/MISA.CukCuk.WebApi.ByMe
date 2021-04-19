@@ -12,12 +12,12 @@ namespace MISA.Infrastructure.Repository
 {
     public class WardRepository : BaseRepository<Ward>, IWardRepository
     {
-        public IEnumerable<Ward> GetWardWithDistrict(Guid wardId)
+        public IEnumerable<Ward> GetWardWithDistrict(Guid districtId)
         {
             var storeName = $"Proc_GetWardWithDistrict";
             var storeParam = new
             {
-                Id = wardId
+                Id = districtId
             };
 
             var entities = _dbConnection.Query<Ward>(storeName, param: storeParam, commandType: CommandType.StoredProcedure);
